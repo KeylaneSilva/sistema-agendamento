@@ -8,19 +8,22 @@ module.exports = {
         return res.json(usuario);
     },
     async create(req, res){
-        const { nome_usuario, senha_usuario} = req.body;
 
-        let data = {}
-        let usuario = await Usuarios.findOne({nome_usuario})
+        const usuario = await Usuarios.create(req.body)
+        return res.json(usuario)
+        // const { nome_usuario, senha_usuario} = req.body;
 
-        if(!usuario){
-            data = {nome_usuario, senha_usuario};
-            usuario = await Usuarios.create(data);
+        // let data = {}
+        // let usuario = await Usuarios.findOne({nome_usuario})
 
-            return res.status(200).json(usuario)
-        }else{
-            return res.status(500).json(usuario)
-        }
+        // if(!usuario){
+        //     data = {nome_usuario, senha_usuario};
+        //     usuario = await Usuarios.create(data);
+
+        //     return res.status(200).json(usuario)
+        // }else{
+        //     return res.status(500).json(usuario)
+        // }
     },
     async details(req, res){
         const { _id } = req.params;
