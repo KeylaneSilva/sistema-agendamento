@@ -3,6 +3,7 @@ const routes = express.Router()
 
 const Usuarios = require('../server/controllers/usuarios.controller')
 const Clientes = require('../server/controllers/clientes.contrioller')
+const Agendamentos = require('../server/controllers/agendamentos.controller')
 
 // Usuários
 
@@ -21,5 +22,12 @@ routes.get('/api/clientes/details/:_id', Clientes.details)
 routes.delete('/api/clientes/delete/:_id', Clientes.delete)
 routes.put('/api/clientes/update', Clientes.update)
 
+// Agendamentos
+
+routes.get('/api/agendamentos', Agendamentos.index)
+routes.post('/api/agendamentos', Agendamentos.create)
+routes.get('/api/agendamentos/details/:_id', Agendamentos.details)
+routes.delete('/api/agendamentos/delete/:_id', Agendamentos.delete)
+routes.put('/api/agendamentos/update', Agendamentos.update)
 
 module.exports = routes
