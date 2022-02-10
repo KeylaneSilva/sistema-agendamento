@@ -1,12 +1,16 @@
 import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 import Album from './pages/client/painel'
+import Routes from './routes'
 
 export default function App() {
   return (
     <div>
-      {/* <h1>Sistema de agendamento</h1> */}
-      <Album />
+      <Router>
+        <Routes />
+      </Router>
+      
     </div>
   )
 }
