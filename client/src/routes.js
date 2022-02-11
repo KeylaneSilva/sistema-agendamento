@@ -39,7 +39,7 @@ export default function Routes1() {
         <Route element={<UsuariosCadastrar/>} path="admin/usuarios/cadastrar" exact />
         <Route element={<UsuariosEditar/>} path="admin/usuarios/eidtar/:idUsuario" exact />
 
-        <Route element={<Dasboard/>} path="admin/dashboard" exact />
+        <Route element={<Dasboard/>} path="admin/" exact />
 
 
         {/* ROTA CLIENTE */}
